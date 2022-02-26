@@ -46,3 +46,21 @@ function RestaurantsGenerator() {
 };
 RestaurantsGenerator();
 
+function TransportationGenerator() {
+    let userIsHappy = false;
+
+    while (userIsHappy === false){
+        let randomTransport = RandomGenerator(transportationList)
+        let userResponse = prompt(`Would you like to travel by ${randomTransport}`)
+
+        if (userResponse.toLowerCase()==="yes"){
+            alert('Safe Travels!')
+            iserIsHappy = true
+        }else if (userResponse.toLowerCase()==='no'){
+            userIsHappy = false
+        }else alert('Please choose "yes" or "no".')
+     }
+};
+TransportationGenerator();
+
+
