@@ -2,7 +2,7 @@
 let listOfDestinations = ['Japan', 'Korea', 'Italy', 'California', 'Mexico', 'Alaska', 'Germany'];
 let listOfRestaurants = ['Borders Cafe', 'Maharaja', 'Sakura', 'Burger King', 'Taco Bell', 'Sonic', 'Five Guys', 'Chipotle'];
 let transportationList = ['car', 'plane', 'jet', 'limo', 'motorcycle', 'subway', 'bus', 'train'];
-let entertainmentList = ['Movies', 'art show', 'snowboarding', 'skatepark', 'thrifting', 'concert', 'festival', 'wine and beer tasting'];
+let entertainmentList = ['the movies', 'to an art show', 'snowboarding', 'to the skatepark', 'thrifting', 'to a concert', 'to a festival', 'wine and beer tasting'];
 
 function RandomGenerator(array){
     let randomChoice = array[Math.floor(Math.random()* array.length)]
@@ -55,12 +55,30 @@ function TransportationGenerator() {
 
         if (userResponse.toLowerCase()==="yes"){
             alert('Safe Travels!')
-            iserIsHappy = true
+            userIsHappy = true
         }else if (userResponse.toLowerCase()==='no'){
             userIsHappy = false
         }else alert('Please choose "yes" or "no".')
      }
 };
 TransportationGenerator();
+    
+function EntertainmentGenerator(){
+    let userIsHappy = false;
+
+    while (userIsHappy === false){
+        let randomEntertainment = RandomGenerator(entertainmentList)
+        let userResponse = prompt(`Would you like to go ${randomEntertainment}?`)
+
+        if (userResponse.toLowerCase()==='yes'){
+            alert('Have Fun!')
+            userIsHappy = true
+        }else if (userResponse.toLowerCase()==='no'){
+            userIsHappy = false
+        }else alert('Please choose "yes" or "no".')
+    }
+};
+EntertainmentGenerator();
+
 
 
