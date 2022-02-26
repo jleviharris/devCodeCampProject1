@@ -28,3 +28,21 @@ function DestinationsGenerator (){
     };
 
 DestinationsGenerator();
+
+function RestaurantsGenerator() {
+    let userIsHappy = false;
+
+    while (userIsHappy === false){
+        let randomRest = RandomGenerator(listOfRestaurants)
+        let userResponse = prompt(`Would you like to eat at ${randomRest}`)
+
+        if (userResponse.toLowerCase()==="yes"){
+            alert('Enjoy your meal!')
+            userIsHappy = true
+        }else if (userResponse.toLowerCase()=== 'no'){
+            userIsHappy = false
+        }else alert('Please choose "yes" or "no".')
+    }
+};
+RestaurantsGenerator();
+
