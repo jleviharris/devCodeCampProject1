@@ -80,5 +80,27 @@ function EntertainmentGenerator(){
 };
 EntertainmentGenerator();
 
+function LastCheck (){
+   
+    let userIsHappy = false;
 
+    while(userIsHappy === false){
+        let userResponse = prompt("Choose '1' for a new Destination. Press '2' for a new Restuarant. Press '3' for new transportation. Press '4' for new Entertainment.")
+
+        if (userResponse === '1'){
+            DestinationsGenerator();
+            userIsHappy = true
+        }else if (userResponse === "2"){
+            RestaurantsGenerator();
+            userIsHappy = true
+        }else if (userResponse === "3"){
+            TransportationGenerator();
+            userIsHappy = true
+        }else if (userResponse === "4"){
+            EntertainmentGenerator();
+            userIsHappy = true
+};
+    };
+};
+LastCheck();
 
