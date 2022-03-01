@@ -2,7 +2,7 @@
 let listOfDestinations = ['Japan', 'Korea', 'Italy', 'California', 'Mexico', 'Alaska', 'Germany'];
 let listOfRestaurants = ['Borders Cafe', 'Maharaja', 'Sakura', 'Burger King', 'Taco Bell', 'Sonic', 'Five Guys', 'Chipotle'];
 let transportationList = ['car', 'plane', 'jet', 'limo', 'motorcycle', 'subway', 'bus', 'train'];
-let entertainmentList = ['the movies', 'to an art show', 'snowboarding', 'to the skatepark', 'thrifting', 'to a concert', 'to a festival', 'wine and beer tasting'];
+let entertainmentList = ['to the movies', 'to an art show', 'snowboarding', 'to the skatepark', 'thrifting', 'to a concert', 'to a festival', 'wine and beer tasting'];
 let randomDest;
 let randomRest;
 let randomTransport;
