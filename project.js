@@ -3,19 +3,21 @@ let listOfDestinations = ['Japan', 'Korea', 'Italy', 'California', 'Mexico', 'Al
 let listOfRestaurants = ['Borders Cafe', 'Maharaja', 'Sakura', 'Burger King', 'Taco Bell', 'Sonic', 'Five Guys', 'Chipotle'];
 let transportationList = ['car', 'plane', 'jet', 'limo', 'motorcycle', 'subway', 'bus', 'train'];
 let entertainmentList = ['the movies', 'to an art show', 'snowboarding', 'to the skatepark', 'thrifting', 'to a concert', 'to a festival', 'wine and beer tasting'];
+let randomDest;
+let randomRest;
+let randomTransport;
+let randomEntertainment;
 
 function RandomGenerator(array){
     let randomChoice = array[Math.floor(Math.random()* array.length)]
     return randomChoice;
 };
-//console.log check bellow
-//console.log(RandomGenerator(listOfDestinations));
 
 function DestinationsGenerator (){
     let userIsHappy = false;
     
     while (userIsHappy === false){
-        let randomDest = RandomGenerator(listOfDestinations)
+        randomDest = RandomGenerator(listOfDestinations)
         let userResponse = prompt(`Do you want to go to ${randomDest}?`)
 
         if (userResponse.toLowerCase()==='yes'){
@@ -25,7 +27,7 @@ function DestinationsGenerator (){
             userIsHappy = false
         }else alert('Please choose "yes" or "no"')
         }
-    };
+};
 
 DestinationsGenerator();
 
@@ -33,7 +35,7 @@ function RestaurantsGenerator() {
     let userIsHappy = false;
 
     while (userIsHappy === false){
-        let randomRest = RandomGenerator(listOfRestaurants)
+        randomRest = RandomGenerator(listOfRestaurants)
         let userResponse = prompt(`Would you like to eat at ${randomRest}`)
 
         if (userResponse.toLowerCase()==="yes"){
@@ -50,7 +52,7 @@ function TransportationGenerator() {
     let userIsHappy = false;
 
     while (userIsHappy === false){
-        let randomTransport = RandomGenerator(transportationList)
+        randomTransport = RandomGenerator(transportationList)
         let userResponse = prompt(`Would you like to travel by ${randomTransport}`)
 
         if (userResponse.toLowerCase()==="yes"){
@@ -67,7 +69,7 @@ function EntertainmentGenerator(){
     let userIsHappy = false;
 
     while (userIsHappy === false){
-        let randomEntertainment = RandomGenerator(entertainmentList)
+        randomEntertainment = RandomGenerator(entertainmentList)
         let userResponse = prompt(`Would you like to go ${randomEntertainment}?`)
 
         if (userResponse.toLowerCase()==='yes'){
@@ -85,22 +87,31 @@ function LastCheck (){
     let userIsHappy = false;
 
     while(userIsHappy === false){
-        let userResponse = prompt("Choose '1' for a new Destination. Press '2' for a new Restuarant. Press '3' for new transportation. Press '4' for new Entertainment.")
+        let userResponse = prompt('Enter "1" for a new Destination. Enter "2" for a new Restuarant. Enter "3" for new transportation. Enter "4" for new Entertainment. Enter "5" to complete your day trip')
 
-        if (userResponse === '1'){
+        if (userResponse === "1"){
             DestinationsGenerator();
-            userIsHappy = true
+            LastCheck();
+            userIsHappy = true;
         }else if (userResponse === "2"){
             RestaurantsGenerator();
-            userIsHappy = true
+            LastCheck();
+            userIsHappy = true;
         }else if (userResponse === "3"){
             TransportationGenerator();
-            userIsHappy = true
+            LastCheck();
+            userIsHappy = true;
         }else if (userResponse === "4"){
             EntertainmentGenerator();
-            userIsHappy = true
-};
+            LastCheck();
+            userIsHappy = true;
+        }else if (userResponse === "5"){
+            userIsHappy = true;
+            console.log(`You will be traveling by ${randomTransport} to get to ${randomDest} where you'll go ${randomEntertainment} and eat at ${randomRest}`);
+        };
     };
 };
 LastCheck();
+
+
 
